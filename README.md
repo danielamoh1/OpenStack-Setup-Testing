@@ -7,7 +7,7 @@ In this project ill be completing 3 tasks:
 
 ##### == STEP BY STEP COMPLETION OF Deploying a Basic OpenStack Setup (All-in-One Node) == ########
 [] PREQ:
-+ CentOS 7 - 9 OS
++ CentOS Stream 9 OS
 + At least 4 GB RAM, 20 GB Disk Space, 2 CPU cores
 
 ### Preperation and Setup ===
@@ -33,3 +33,11 @@ Install the OpenStack Repo zed::
 Step 2:
 Install Packstack::
 ![2024_10_02_0wp_Kleki](https://github.com/user-attachments/assets/34cd10d6-a95c-4918-afe7-7b973ed99495)
+
+Step 3:
+Now run the Pack installer. This will iniate an automated deployment of all core OpenStack Components. (Command is below):
+
+```
+sudo packstack --allinone
+```
+
