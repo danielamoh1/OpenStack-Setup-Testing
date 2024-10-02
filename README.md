@@ -41,3 +41,6 @@ Now run the Pack installer. This will iniate an automated deployment of all core
 sudo packstack --allinone
 ```
 this will take 15-30minutes to complete..
+
+![2024_10_02_0ww_Kleki](https://github.com/user-attachments/assets/786d2154-5986-4a7c-8ffe-3d32980bb34a)
+
