@@ -32,4 +32,4 @@ Install the OpenStack Repo zed::
 
 Step 2:
 Install Packstack::
-
+![2024_10_02_0wp_Kleki](https://github.com/user-attachments/assets/34cd10d6-a95c-4918-afe7-7b973ed99495)
