@@ -15,3 +15,5 @@ update system package::
 ```
 sudo yum update -y
 ```
+Step 2: 
+Temporarily Disable SELinux and Firewalld (NOTE: DO NOT DO THIS IN PRODUCTION!!)
