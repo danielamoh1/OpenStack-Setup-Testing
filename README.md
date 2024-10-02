@@ -13,7 +13,7 @@ In this project ill be completing 3 tasks:
 ### Preperation and Setup ===
 
 Step 1: .
-update system package::
+Update system package::
 ```
 sudo yum update -y
 ```
@@ -22,7 +22,7 @@ Temporarily Disable SELinux and Firewalld (NOTE: DO NOT DO THIS IN PRODUCTION!!)
 ![OS #1](https://github.com/user-attachments/assets/12aad4d5-11eb-47eb-a10a-06f5f955c69a)
 
 Step 3: .
-when configuring the network settings, make sure the IP is static
+When configuring the network settings, make sure the IP is static
 
 ### Installing Packstack and OpenStack ===
 
