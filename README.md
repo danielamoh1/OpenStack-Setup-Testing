@@ -40,4 +40,4 @@ Now run the Pack installer. This will iniate an automated deployment of all core
 ```
 sudo packstack --allinone
 ```
-
+this will take 15-30minutes to complete..
