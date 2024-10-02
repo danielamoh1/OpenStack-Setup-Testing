@@ -10,6 +10,8 @@ In this project ill be completing 3 tasks:
 + CentOS 7 - 9 OS
 + At least 4 GB RAM, 20 GB Disk Space, 2 CPU cores
 
+### Preperation and Setup ===
+
 Step 1: 
 update system package::
 ```
@@ -18,3 +20,13 @@ sudo yum update -y
 Step 2: 
 Temporarily Disable SELinux and Firewalld (NOTE: DO NOT DO THIS IN PRODUCTION!!)
 ![OS #1](https://github.com/user-attachments/assets/12aad4d5-11eb-47eb-a10a-06f5f955c69a)
+
+Step 3:
+when configuring the network settings, make sure the IP is static
+
+### Installing Packstack and OpenStack ===
+
+Step 1:
+Install the OpenStack Repo zed::
+
+
