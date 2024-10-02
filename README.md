@@ -29,3 +29,7 @@ when configuring the network settings, make sure the IP is static
 Step 1:
 Install the OpenStack Repo zed::
 ![OS #2](https://github.com/user-attachments/assets/65f312b5-bec2-4b2e-8e59-ca353de21b1b)
+
+Step 2:
+Install Packstack::
+
