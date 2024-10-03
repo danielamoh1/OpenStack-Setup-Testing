@@ -44,7 +44,7 @@ This will take 15-30minutes to complete..
 
 ![2024_10_02_0ww_Kleki](https://github.com/user-attachments/assets/786d2154-5986-4a7c-8ffe-3d32980bb34a)
 
-Still going::
+Still going, Ill waiting for it to finish building::
 
 ![2024_10_02_0x2_Kleki](https://github.com/user-attachments/assets/9e488648-4b51-45ba-82bd-3788d2f54285)
 
