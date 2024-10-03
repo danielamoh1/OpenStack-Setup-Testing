@@ -56,3 +56,9 @@ CHECKING..:
 
 ![image](https://github.com/user-attachments/assets/b90b4124-5f50-4efe-bff0-23f186e95188)
 
+UI Looks to be Inaccessible::
+
+![image](https://github.com/user-attachments/assets/5f0b1973-9ec5-4777-b973-28dd3b66010d)
+
+I'll TroubleShoot the Issue.
+
