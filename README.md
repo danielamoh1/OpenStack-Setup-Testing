@@ -48,3 +48,7 @@ Still going, Ill waiting for it to finish building::
 
 ![2024_10_02_0x2_Kleki](https://github.com/user-attachments/assets/9e488648-4b51-45ba-82bd-3788d2f54285)
 
+Build completed with some errors, but lets test to see if the UI is still accessible with out any issues:
+
+![2024_10_02_0z9_Kleki](https://github.com/user-attachments/assets/59add165-fbc4-47c7-8a01-40f2791df822)
+
