@@ -52,3 +52,7 @@ Build completed with some errors, but lets test to see if the UI is still access
 
 ![2024_10_02_0z9_Kleki](https://github.com/user-attachments/assets/59add165-fbc4-47c7-8a01-40f2791df822)
 
+CHECKING..:
+
+![image](https://github.com/user-attachments/assets/b90b4124-5f50-4efe-bff0-23f186e95188)
+
