@@ -99,7 +99,7 @@ Lets quickly walk through how I Fixed this:
     --bootstrap-region-id RegionOne`
 - I updated the ~/keystonerc_admin dir with the new passwd then sourced the dir
 - I then started the apache service with `systemctl start httpd`
-- Then I retested the loging with the new passwd
+- Then I retested the login with the new passwd
 
 I expect to encounter More issues as I go along but thats part of the work so I expect it and have full confidence ill always figure it out
 
