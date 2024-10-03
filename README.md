@@ -84,3 +84,25 @@ Could Stem from this error:
 ![2024_10_02_12b_Kleki](https://github.com/user-attachments/assets/2b5b7681-484a-41f0-b550-1f7607db97fd)
 
 Will TroubleShoot
+
+SUCCESS!:
+
+![2024_10_03_0j4_Kleki](https://github.com/user-attachments/assets/eef9b639-c3e5-4145-bcbd-70c73a69e8f0)
+
+Lets quickly walk through how I Fixed this:
+
+- I stopped the Apache service with the `systemctl stop httpd` command
+- I resetted the passwd with the command: `keystone-manage bootstrap --bootstrap-password 'ENTER_NEW_PASSWD_HERE' \
+    --bootstrap-admin-url http://10.0.0.151:5000/v3/ \
+    --bootstrap-internal-url http://10.0.0.151:5000/v3/ \
+    --bootstrap-public-url http://10.0.0.151:5000/v3/ \
+    --bootstrap-region-id RegionOne`
+- I updated the ~/keystonerc_admin dir with the new passwd then sourced the dir
+- Then I retested the loging with the new passwd
+
+I expect to encounter More issues as I go along but thats part of the work so I expect it and have full confidence ill always figure it out
+
+======== NOW ON TO THE NEXT TASK IN THIS PROJECT =========
+
+##### == STEP BY STEP COMPLETION OF Setting up a Multi-node OpenStack Deployment (ENV) == ########
+
