@@ -70,7 +70,7 @@ UI is now accessible..
 
 Lets quickly walk through what I did in the Backend to fix this:
 
-- I stopped and disable the `NetworkManger` service
+- I stopped and disabled the `NetworkManger` service
 - I ran the `less /var/tmp/packstack/20241002-194116-lj_a_ufq/manifests/10.0.0.151_controller.pp.log` command to get more context and information on what exactly was causing the issue
 - 2 things...that I read from the errors that could be potential fixes: First, Openstack-glance was failing to install. Second, python3-pyxattr was struggling to be installed during the automation sequence
 - Action to fix: First, I ran the command `dnf config-manager --set-enabled crb` to enable the crb repo. Next, I ran the command `dnf clean all && dnf makecache` to rebuild DNF Cache and update repos. Next, I did a manual installation of pyxattr by using the command `dnf install -y python3-pyxattr`. And then I ran the command `dnf install -y openstack-glance` to install the openstack-glance package now that pyxattr was available and successfully installed. Finally I reiniated the build by running the `packstack --answer-file /root/packstack-answers-20241002-194118.txt` command...and tested for success after the build was finished
