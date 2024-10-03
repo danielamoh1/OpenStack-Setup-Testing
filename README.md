@@ -13,7 +13,7 @@ In this project ill be completing 3 tasks:
 ### Preperation and Setup ===
 
 Step 1: .
-Update system package::
+Update system packages::
 ```
 sudo yum update -y
 ```
