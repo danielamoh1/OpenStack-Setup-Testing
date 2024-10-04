@@ -114,3 +114,10 @@ Since I already have the controller node built ill go ahead and configure the ot
 now ill run the `packstack --answer-file=packstack-answers-20241002-194118.txt` command to deploy the multi-node env
 
 NOTE: Make sure you have a passwordless SSH connection established to each node before deploying the env
+
+DEPLOYING MULTI-NODE ENV:
+
+![image](https://github.com/user-attachments/assets/51c0711b-f1ae-49f0-bfd7-6ba7089e5997)
+
+WILL TAKE A WHILE (15 - 30 mins)
+
