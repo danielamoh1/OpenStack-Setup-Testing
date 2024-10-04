@@ -111,6 +111,6 @@ Since I already have the controller node built ill go ahead and configure the ot
 
 ![2024_10_03_13y_Kleki](https://github.com/user-attachments/assets/12bd8e83-3f4a-49a6-b032-303d051aa543)
 
-now ill run the packstack command to deploy the multi-node env
+now ill run the `packstack --answer-file=packstack-answers-20241002-194118.txt` command to deploy the multi-node env
 
 NOTE: Make sure you have a passwordless SSH connection established to each node before deploying the env
