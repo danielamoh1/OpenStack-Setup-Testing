@@ -107,3 +107,8 @@ I expect to encounter More issues as I go along but thats part of the work so I 
 
 ##### == STEP BY STEP COMPLETION OF Setting up a Multi-node OpenStack Deployment (ENV) == ########
 
+Since I already have the controller node built ill go ahead and configure the other two nodes within the packstack answers.txt file
+
+![2024_10_03_13y_Kleki](https://github.com/user-attachments/assets/12bd8e83-3f4a-49a6-b032-303d051aa543)
+
+now ill run the packstack command to deploy the multi-node env
