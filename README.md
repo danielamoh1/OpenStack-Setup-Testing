@@ -81,13 +81,14 @@ Now there's Issues Authenticating:
 
 Could Stem from this error:
 
-![2024_10_02_12b_Kleki](https://github.com/user-attachments/assets/2b5b7681-484a-41f0-b550-1f7607db97fd)
+![2024_10_02_12b_Kleki](https://github.com/user-attachments/assets/06cb96c0-956d-4cd3-86a1-a4075dc60fda)
 
 Will TroubleShoot
 
 SUCCESS!:
 
-![2024_10_03_0j4_Kleki](https://github.com/user-attachments/assets/eef9b639-c3e5-4145-bcbd-70c73a69e8f0)
+![2024_10_03_0j4_Kleki](https://github.com/user-attachments/assets/597b9651-e1f7-4ab4-8a50-769019099cd2)
+
 
 Lets quickly walk through how I Fixed this:
 
