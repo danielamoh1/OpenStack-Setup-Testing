@@ -8,49 +8,44 @@ In this project ill be completing 3 tasks:
 ```mermaid
 flowchart TD;
 
-    %% Grouping the firewall functionalities under one subgraph
-    subgraph Perimeter_Firewall_Setup
-        A1[pfsense/OPNsense] --> B1[Firewall Zones and Policies]
-        A1 --> C1[NAT Configuration]
-        B1 --> D1[Traffic Shaping and QoS]
+    %% Beginner Project: Single-Node OpenStack Setup
+    subgraph Beginner_Project["Beginner Project: Single-Node Setup"]
+        A1[Prepare CentOS] --> B1[Install Packstack]
+        A1 --> C1[Run Packstack with All-in-One]
+        B1 --> D1[Configure Neutron Networking]
+        C1 --> E1[Set Up External Network]
+        D1 --> F1[Create Internal Network and Subnet]
+        E1 --> G1[Upload Image to Glance]
+        F1 --> H1[Create VM Flavor]
+        G1 --> I1[Launch Instance]
+        H1 --> J1[Associate Floating IP]
     end
 
-    %% IDS/IPS section using Suricata
-    subgraph Intrusion_Detection_Prevention
-        A2[Suricata] --> B2[Intrusion Detection]
-        A2 --> C2[Intrusion Prevention]
-    end
-    
-    %% VPN and Remote Access section using OpenVPN
-    subgraph VPN_Setup
-        A3[OpenVPN] --> B3[Remote Access VPN for Employees]
-        A3 --> C3[Site-to-Site VPN]
-    end
-
-    %% High Availability setup using CARP
-    subgraph High_Availability_Failover
-        A4[CARP for HA] --> B4[Active/Passive Failover]
-    end
-    
-    %% Centralized logging and monitoring using ELK stack or Graylog
-    subgraph Centralized_Logging_Monitoring
-        A5[ELK Stack/Graylog] --> B5[Firewall Logs]
-        A5 --> C5[Suricata Logs]
+    %% Intermediate Project: Multi-Node OpenStack Setup
+    subgraph Intermediate_Project["Intermediate Project: Multi-Node Setup"]
+        A2[Prepare Multiple CentOS Nodes] --> B2[Install OpenStack on Controller Node]
+        A2 --> C2[Install OpenStack on Compute Nodes]
+        B2 --> D2[Configure Neutron with VLAN/VXLAN]
+        C2 --> E2[Run Packstack with Multi-Node Answer File]
+        D2 --> F2[Create Networks, Flavors, and Images]
+        E2 --> G2[Launch Instances on Compute Nodes]
+        F2 --> H2[Associate Floating IPs]
     end
 
-    %% Connecting Components together
-    Perimeter_Firewall_Setup --> Intrusion_Detection_Prevention
-    Perimeter_Firewall_Setup --> VPN_Setup
-    Intrusion_Detection_Prevention --> High_Availability_Failover
-    VPN_Setup --> Centralized_Logging_Monitoring
-    High_Availability_Failover --> Centralized_Logging_Monitoring
-
-    %% Labeling references for proprietary solutions
-    subgraph PaloAlto_Fortinet_JuniperSRX_References
-        X1[Palo Alto: Zones & Policies, App-ID, GlobalProtect] --> A1
-        X2[Fortinet: Zones, IPS, FortiGuard] --> A2
-        X3[Juniper: AppSecure, SRX QoS] --> A4
+    %% Advanced Project: High Availability & Orchestration
+    subgraph Advanced_Project["Advanced Project: High Availability & Orchestration"]
+        A3[Prepare Controller and Compute Nodes for HA] --> B3[Configure HAProxy for Load Balancing]
+        A3 --> C3[Set Up Galera Cluster for DB HA]
+        B3 --> D3[Set Up RabbitMQ Cluster for Message Queueing HA]
+        C3 --> E3[Configure OpenStack Services in HA]
+        D3 --> F3[Deploy Heat for Orchestration]
+        E3 --> G3[Create Heat Template for Auto-Scaling]
+        F3 --> H3[Set Up Centralized Logging & Monitoring]
     end
+
+    %% Connecting Projects Together
+    Beginner_Project --> Intermediate_Project
+    Intermediate_Project --> Advanced_Project
 ```
 
 ##### == STEP BY STEP COMPLETION OF Deploying a Basic OpenStack Setup (All-in-One Node) == ########
