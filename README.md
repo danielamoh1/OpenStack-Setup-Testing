@@ -8,47 +8,56 @@ In this project ill be completing 3 tasks:
 ```mermaid
 flowchart TD;
 
-  %% Begin the Beginner Project
-  subgraph Beginner_Project["Beginner Project: Single-Node OpenStack Setup"]
-    style Beginner_Project fill:#f9f,stroke:#333,stroke-width:2px;
+  %% Beginner Project: Single-Node OpenStack Setup
+  subgraph Beginner_Project["Beginner Project: Single-Node OpenStack"]
+    style Beginner_Project fill:#e3f2fd,stroke:#0d47a1,stroke-width:2px;
 
-    A[Prepare CentOS] -->|Update and Configure| B[Install Packstack]
-    B -->|All-in-One Setup| C[Run Packstack --allinone]
-    C --> D[[Configure Network and Subnet]]
-    D --> E([Upload Image to Glance])
-    E --> F{Create Flavor for VM}
-    F --> G[Launch Instance on Network]
-    G --> H((Associate Floating IP))
+    A[Prepare CentOS Environment]
+    B[Install Packstack on Single Node]
+    C[Run Packstack with All-in-One Configuration]
+    D[Configure Network and Subnet]
+    E[Upload OS Image to Glance]
+    F[Create VM Flavor]
+    G[Launch Virtual Machine Instance]
+    H[Associate Floating IP for External Access]
+
+    A --> B --> C --> D --> E --> F --> G --> H
   end
 
-  %% Begin the Intermediate Project
+  %% Intermediate Project: Multi-Node OpenStack Deployment
   subgraph Intermediate_Project["Intermediate Project: Multi-Node OpenStack Setup"]
-    style Intermediate_Project fill:#ffcccc,stroke:#ff0066,stroke-width:2px;
+    style Intermediate_Project fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px;
 
-    A1[Prepare Multiple CentOS Nodes] -->|Controller and Compute| B1[Install OpenStack on Controller]
-    B1 -->|Install Nova/Neutron| C1[Install OpenStack on Compute Nodes]
-    C1 -->|Networking Setup| D1[[Configure Neutron Networking]]
-    D1 -->|Distribute Services| E1{Run Packstack with Multi-Node Config}
-    E1 --> F1[Create Network, Flavor, and Image]
-    F1 --> G1([Launch Instances on Compute Nodes])
-    G1 --> H1((Verify Multi-Node Setup))
+    A1[Prepare Multiple CentOS Nodes]
+    B1[Install OpenStack on Controller Node (Keystone, Glance, Horizon, Neutron)]
+    C1[Install OpenStack on Compute Nodes (Nova, Neutron Agent)]
+    D1[Configure Networking with Neutron]
+    E1[Run Packstack with Multi-Node Answer File]
+    F1[Create Network, Subnet, and Flavor]
+    G1[Launch Instances on Compute Nodes]
+    H1[Verify Multi-Node Setup]
+
+    A1 --> B1 --> C1 --> D1 --> E1 --> F1 --> G1 --> H1
   end
 
-  %% Begin the Advanced Project
-  subgraph Advanced_Project["Advanced Project: High Availability (HA) & Heat Orchestration"]
-    style Advanced_Project fill:#ccffcc,stroke:#009933,stroke-width:2px;
+  %% Advanced Project: Highly Available OpenStack & Orchestration
+  subgraph Advanced_Project["Advanced Project: Highly Available OpenStack + Orchestration"]
+    style Advanced_Project fill:#f9fbe7,stroke:#827717,stroke-width:2px;
 
-    A2[Prepare HA Controller and Compute Nodes] -->|Load Balancer| B2{Configure HAProxy for Load Balancing}
-    B2 -->|DB Redundancy| C2[[Setup Galera Cluster for HA]]
-    C2 -->|Message Queuing| D2([Setup RabbitMQ Cluster])
-    D2 -->|Service Redundancy| E2{Configure OpenStack Services in HA}
-    E2 -->|Automation| F2[[Deploy Heat for Orchestration]]
-    F2 -->|Auto-Scaling Setup| G2{Configure Heat Auto-Scaling}
-    G2 -->|Monitor & Log| H2([Setup Centralized Logging & Monitoring])
-    H2 --> I2((Verify HA & Orchestration))
+    A2[Prepare Multiple Controller and Compute Nodes]
+    B2[Configure HAProxy for Load Balancing]
+    C2[Set Up Galera Cluster for Database High Availability]
+    D2[Set Up RabbitMQ Cluster for Message Queueing High Availability]
+    E2[Configure OpenStack Services with HA (Keystone, Glance, Neutron)]
+    F2[Deploy Heat for Orchestration and Template-Based Deployments]
+    G2[Set Up Auto-Scaling Using Heat Templates]
+    H2[Implement Centralized Logging and Monitoring]
+    I2[Verify HA Setup and Scalability]
+
+    A2 --> B2 --> C2 --> D2 --> E2 --> F2 --> G2 --> H2 --> I2
   end
 
-  linkStyle default stroke:#0000ff,stroke-width:2px;
+  linkStyle default stroke:#01579b,stroke-width:2px;
 ```
 
 ##### == STEP BY STEP COMPLETION OF Deploying a Basic OpenStack Setup (All-in-One Node) == ########
