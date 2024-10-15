@@ -29,11 +29,11 @@ flowchart TD;
     style Intermediate_Project fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px;
 
     A1[Prepare Multiple CentOS Nodes]
-    B1[Install OpenStack on Controller Node (Keystone, Glance, Horizon, Neutron)]
-    C1[Install OpenStack on Compute Nodes (Nova, Neutron Agent)]
+    B1[Install OpenStack on Controller Node with Keystone Glance Horizon Neutron]
+    C1[Install OpenStack on Compute Nodes with Nova Neutron Agent]
     D1[Configure Networking with Neutron]
     E1[Run Packstack with Multi-Node Answer File]
-    F1[Create Network, Subnet, and Flavor]
+    F1[Create Network Subnet and Flavor]
     G1[Launch Instances on Compute Nodes]
     H1[Verify Multi-Node Setup]
 
@@ -47,12 +47,12 @@ flowchart TD;
     A2[Prepare Multiple Controller and Compute Nodes]
     B2[Configure HAProxy for Load Balancing]
     C2[Set Up Galera Cluster for Database High Availability]
-    D2[Set Up RabbitMQ Cluster for Message Queueing High Availability]
-    E2[Configure OpenStack Services with HA (Keystone, Glance, Neutron)]
+    D2[Set Up RabbitMQ Cluster for Message Queuing High Availability]
+    E2[Configure OpenStack Services with High Availability]
     F2[Deploy Heat for Orchestration and Template-Based Deployments]
     G2[Set Up Auto-Scaling Using Heat Templates]
     H2[Implement Centralized Logging and Monitoring]
-    I2[Verify HA Setup and Scalability]
+    I2[Verify High Availability Setup and Scalability]
 
     A2 --> B2 --> C2 --> D2 --> E2 --> F2 --> G2 --> H2 --> I2
   end
