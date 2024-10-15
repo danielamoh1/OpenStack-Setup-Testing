@@ -20,23 +20,23 @@ flowchart TD;
 
   subgraph Intermediate_Project
     A1[Prepare Multiple CentOS Nodes] --> B1[Install OpenStack on Controller Node]
-    B1 --> C1[Configure Compute Nodes]
-    C1 --> D1[Configure Networking (Neutron)]
+    B1 --> C1[Install OpenStack on Compute Nodes]
+    C1 --> D1[Configure Neutron Networking]
     D1 --> E1[Run Packstack with Multi-Node Answer File]
-    E1 --> F1[Create Network, Flavor, Image on Controller]
-    F1 --> G1[Launch Instances on Compute Nodes]
+    E1 --> F1[Create Network, Flavor, Image]
+    F1 --> G1[Launch Instances]
     G1 --> H1[Verify Multi-Node Setup]
   end
 
   subgraph Advanced_Project
-    A2[Prepare Multiple Controller and Compute Nodes] --> B2[Configure HAProxy for Load Balancing]
-    B2 --> C2[Setup Galera Cluster for Database HA]
-    C2 --> D2[Setup RabbitMQ Cluster for Message Queuing]
-    D2 --> E2[Install and Configure OpenStack Services in HA]
+    A2[Prepare Controller and Compute Nodes] --> B2[Configure HAProxy for Load Balancing]
+    B2 --> C2[Setup Galera Cluster for DB HA]
+    C2 --> D2[Setup RabbitMQ Cluster for Queuing]
+    D2 --> E2[Configure OpenStack Services with HA]
     E2 --> F2[Deploy Heat for Orchestration]
     F2 --> G2[Configure Auto-Scaling with Heat]
-    G2 --> H2[Set Up Centralized Logging and Monitoring]
-    H2 --> I2[Verify HA and Orchestration Setup]
+    G2 --> H2[Setup Centralized Logging and Monitoring]
+    H2 --> I2[Verify HA and Orchestration]
   end
 
   linkStyle default stroke:#00f,stroke-width:2px;
