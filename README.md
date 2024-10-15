@@ -6,56 +6,51 @@ In this project ill be completing 3 tasks:
 - Deploying a highly available Openstack ENV and using Automation with Heat Orchestartion
 
 ```mermaid
-flowchart LR;
+flowchart TD;
 
-  %% Beginner Project: Single-Node OpenStack Setup
-  subgraph Beginner_Project["Beginner Project: Single-Node Setup"]
-    direction LR
-    A[Prepare CentOS Environment] --> B[Install Packstack]
-    B --> C[Run Packstack with All-in-One Configuration]
-    C --> D[Configure Neutron Networking]
-    D --> E[Set Up External Network]
-    E --> F[Create Internal Network and Subnet]
-    F --> G[Upload Cirros Image to Glance]
-    G --> H[Create VM Flavor for Instances]
-    H --> I[Launch First VM Instance]
-    I --> J[Associate Floating IP for External Access]
-    J --> K[Verify VM Access via SSH]
-  end
+    %% Grouping the firewall functionalities under one subgraph
+    subgraph Perimeter_Firewall_Setup
+        A1[pfsense/OPNsense] --> B1[Firewall Zones and Policies]
+        A1 --> C1[NAT Configuration]
+        B1 --> D1[Traffic Shaping and QoS]
+    end
 
-  %% Intermediate Project: Multi-Node OpenStack Deployment
-  subgraph Intermediate_Project["Intermediate Project: Multi-Node Setup"]
-    direction LR
-    A1[Prepare Multiple CentOS Nodes] --> B1[Install OpenStack on Controller Node]
-    B1 --> C1[Install OpenStack on Compute Nodes]
-    C1 --> D1[Configure Neutron Networking with VLAN/VXLAN]
-    D1 --> E1[Run Packstack with Multi-Node Answer File]
-    E1 --> F1[Set Up External and Internal Networks]
-    F1 --> G1[Create VM Flavors and Upload Images]
-    G1 --> H1[Launch Instances on Compute Nodes]
-    H1 --> I1[Associate Floating IPs for External Access]
-    I1 --> J1[Verify Multi-Node Setup by Testing VM Access]
-  end
+    %% IDS/IPS section using Suricata
+    subgraph Intrusion_Detection_Prevention
+        A2[Suricata] --> B2[Intrusion Detection]
+        A2 --> C2[Intrusion Prevention]
+    end
+    
+    %% VPN and Remote Access section using OpenVPN
+    subgraph VPN_Setup
+        A3[OpenVPN] --> B3[Remote Access VPN for Employees]
+        A3 --> C3[Site-to-Site VPN]
+    end
 
-  %% Advanced Project: High Availability & Orchestration
-  subgraph Advanced_Project["Advanced Project: High Availability & Orchestration"]
-    direction LR
-    A2[Prepare Controller and Compute Nodes for HA] --> B2[Configure HAProxy for Load Balancing]
-    B2 --> C2[Set Up Galera Cluster for DB HA]
-    C2 --> D2[Set Up RabbitMQ Cluster for Message Queueing HA]
-    D2 --> E2[Configure Keystone, Glance, Nova API in HA]
-    E2 --> F2[Deploy Heat for Orchestration]
-    F2 --> G2[Create Heat Template for Auto-Scaling]
-    G2 --> H2[Configure Auto-Scaling Policies]
-    H2 --> I2[Set Up Centralized Logging and Monitoring]
-    I2 --> J2[Verify HA and Orchestration]
-  end
+    %% High Availability setup using CARP
+    subgraph High_Availability_Failover
+        A4[CARP for HA] --> B4[Active/Passive Failover]
+    end
+    
+    %% Centralized logging and monitoring using ELK stack or Graylog
+    subgraph Centralized_Logging_Monitoring
+        A5[ELK Stack/Graylog] --> B5[Firewall Logs]
+        A5 --> C5[Suricata Logs]
+    end
 
-  %% Connect the Projects Together
-  Beginner_Project --> Intermediate_Project
-  Intermediate_Project --> Advanced_Project
+    %% Connecting Components together
+    Perimeter_Firewall_Setup --> Intrusion_Detection_Prevention
+    Perimeter_Firewall_Setup --> VPN_Setup
+    Intrusion_Detection_Prevention --> High_Availability_Failover
+    VPN_Setup --> Centralized_Logging_Monitoring
+    High_Availability_Failover --> Centralized_Logging_Monitoring
 
-  linkStyle default stroke:#00f,stroke-width:2px;
+    %% Labeling references for proprietary solutions
+    subgraph PaloAlto_Fortinet_JuniperSRX_References
+        X1[Palo Alto: Zones & Policies, App-ID, GlobalProtect] --> A1
+        X2[Fortinet: Zones, IPS, FortiGuard] --> A2
+        X3[Juniper: AppSecure, SRX QoS] --> A4
+    end
 ```
 
 ##### == STEP BY STEP COMPLETION OF Deploying a Basic OpenStack Setup (All-in-One Node) == ########
