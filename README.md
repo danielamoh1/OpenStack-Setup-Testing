@@ -6,44 +6,54 @@ In this project ill be completing 3 tasks:
 - Deploying a highly available Openstack ENV and using Automation with Heat Orchestartion
 
 ```mermaid
-flowchart TD;
+flowchart LR;
 
   %% Beginner Project: Single-Node OpenStack Setup
   subgraph Beginner_Project["Beginner Project: Single-Node Setup"]
-    A[Prepare CentOS] --> B[Install Packstack]
+    direction LR
+    A[Prepare CentOS Environment] --> B[Install Packstack]
     B --> C[Run Packstack with All-in-One Configuration]
-    C --> D[Configure Network and Subnet]
-    D --> E[Upload Image to Glance]
-    E --> F[Create VM Flavor]
-    F --> G[Launch Instance]
-    G --> H[Associate Floating IP]
+    C --> D[Configure Neutron Networking]
+    D --> E[Set Up External Network]
+    E --> F[Create Internal Network and Subnet]
+    F --> G[Upload Cirros Image to Glance]
+    G --> H[Create VM Flavor for Instances]
+    H --> I[Launch First VM Instance]
+    I --> J[Associate Floating IP for External Access]
+    J --> K[Verify VM Access via SSH]
   end
 
   %% Intermediate Project: Multi-Node OpenStack Deployment
   subgraph Intermediate_Project["Intermediate Project: Multi-Node Setup"]
+    direction LR
     A1[Prepare Multiple CentOS Nodes] --> B1[Install OpenStack on Controller Node]
     B1 --> C1[Install OpenStack on Compute Nodes]
-    C1 --> D1[Configure Neutron Networking]
+    C1 --> D1[Configure Neutron Networking with VLAN/VXLAN]
     D1 --> E1[Run Packstack with Multi-Node Answer File]
-    E1 --> F1[Create Network, Flavor, Image]
-    F1 --> G1[Launch Instances]
-    G1 --> H1[Verify Multi-Node Setup]
+    E1 --> F1[Set Up External and Internal Networks]
+    F1 --> G1[Create VM Flavors and Upload Images]
+    G1 --> H1[Launch Instances on Compute Nodes]
+    H1 --> I1[Associate Floating IPs for External Access]
+    I1 --> J1[Verify Multi-Node Setup by Testing VM Access]
   end
 
   %% Advanced Project: High Availability & Orchestration
   subgraph Advanced_Project["Advanced Project: High Availability & Orchestration"]
-    A2[Prepare Controller and Compute Nodes] --> B2[Configure HAProxy for Load Balancing]
-    B2 --> C2[Setup Galera Cluster for Database HA]
-    C2 --> D2[Setup RabbitMQ Cluster for Message Queueing]
-    D2 --> E2[Configure OpenStack Services with HA]
+    direction LR
+    A2[Prepare Controller and Compute Nodes for HA] --> B2[Configure HAProxy for Load Balancing]
+    B2 --> C2[Set Up Galera Cluster for DB HA]
+    C2 --> D2[Set Up RabbitMQ Cluster for Message Queueing HA]
+    D2 --> E2[Configure Keystone, Glance, Nova API in HA]
     E2 --> F2[Deploy Heat for Orchestration]
-    F2 --> G2[Configure Auto-Scaling with Heat]
-    G2 --> H2[Setup Centralized Logging and Monitoring]
-    H2 --> I2[Verify HA and Orchestration]
+    F2 --> G2[Create Heat Template for Auto-Scaling]
+    G2 --> H2[Configure Auto-Scaling Policies]
+    H2 --> I2[Set Up Centralized Logging and Monitoring]
+    I2 --> J2[Verify HA and Orchestration]
   end
 
-  %% Connect Projects together for hierarchical clarity
-  Beginner_Project --> Intermediate_Project --> Advanced_Project
+  %% Connect the Projects Together
+  Beginner_Project --> Intermediate_Project
+  Intermediate_Project --> Advanced_Project
 
   linkStyle default stroke:#00f,stroke-width:2px;
 ```
