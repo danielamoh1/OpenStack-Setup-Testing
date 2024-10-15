@@ -10,6 +10,7 @@ flowchart TD;
 
     %% Beginner Project: Single-Node OpenStack Setup
     subgraph Beginner_Project["Beginner Project: Single-Node Setup"]
+
         A1[Prepare CentOS] --> B1[Install Packstack]
         A1 --> C1[Run Packstack with All-in-One]
         B1 --> D1[Configure Neutron Networking]
@@ -23,6 +24,7 @@ flowchart TD;
 
     %% Intermediate Project: Multi-Node OpenStack Setup
     subgraph Intermediate_Project["Intermediate Project: Multi-Node Setup"]
+
         A2[Prepare Multiple CentOS Nodes] --> B2[Install OpenStack on Controller Node]
         A2 --> C2[Install OpenStack on Compute Nodes]
         B2 --> D2[Configure Neutron with VLAN/VXLAN]
@@ -34,6 +36,7 @@ flowchart TD;
 
     %% Advanced Project: High Availability & Orchestration
     subgraph Advanced_Project["Advanced Project: High Availability & Orchestration"]
+
         A3[Prepare Controller and Compute Nodes for HA] --> B3[Configure HAProxy for Load Balancing]
         A3 --> C3[Set Up Galera Cluster for DB HA]
         B3 --> D3[Set Up RabbitMQ Cluster for Message Queueing HA]
