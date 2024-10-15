@@ -8,17 +8,19 @@ In this project ill be completing 3 tasks:
 ```mermaid
 flowchart TD;
 
-  subgraph Beginner_Project
+  %% Beginner Project: Single-Node OpenStack Setup
+  subgraph Beginner_Project["Beginner Project: Single-Node Setup"]
     A[Prepare CentOS] --> B[Install Packstack]
-    B --> C[Run Packstack --allinone]
+    B --> C[Run Packstack with All-in-One Configuration]
     C --> D[Configure Network and Subnet]
     D --> E[Upload Image to Glance]
-    E --> F[Create Flavor]
+    E --> F[Create VM Flavor]
     F --> G[Launch Instance]
     G --> H[Associate Floating IP]
   end
 
-  subgraph Intermediate_Project
+  %% Intermediate Project: Multi-Node OpenStack Deployment
+  subgraph Intermediate_Project["Intermediate Project: Multi-Node Setup"]
     A1[Prepare Multiple CentOS Nodes] --> B1[Install OpenStack on Controller Node]
     B1 --> C1[Install OpenStack on Compute Nodes]
     C1 --> D1[Configure Neutron Networking]
@@ -28,16 +30,20 @@ flowchart TD;
     G1 --> H1[Verify Multi-Node Setup]
   end
 
-  subgraph Advanced_Project
+  %% Advanced Project: High Availability & Orchestration
+  subgraph Advanced_Project["Advanced Project: High Availability & Orchestration"]
     A2[Prepare Controller and Compute Nodes] --> B2[Configure HAProxy for Load Balancing]
-    B2 --> C2[Setup Galera Cluster for DB HA]
-    C2 --> D2[Setup RabbitMQ Cluster for Queuing]
+    B2 --> C2[Setup Galera Cluster for Database HA]
+    C2 --> D2[Setup RabbitMQ Cluster for Message Queueing]
     D2 --> E2[Configure OpenStack Services with HA]
     E2 --> F2[Deploy Heat for Orchestration]
     F2 --> G2[Configure Auto-Scaling with Heat]
     G2 --> H2[Setup Centralized Logging and Monitoring]
     H2 --> I2[Verify HA and Orchestration]
   end
+
+  %% Connect Projects together for hierarchical clarity
+  Beginner_Project --> Intermediate_Project --> Advanced_Project
 
   linkStyle default stroke:#00f,stroke-width:2px;
 ```
