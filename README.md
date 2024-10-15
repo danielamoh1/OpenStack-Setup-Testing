@@ -8,38 +8,47 @@ In this project ill be completing 3 tasks:
 ```mermaid
 flowchart TD;
 
-  subgraph Beginner_Project
-    A[Prepare CentOS] --> B[Install Packstack]
-    B --> C[Run Packstack --allinone]
-    C --> D[Configure Network and Subnet]
-    D --> E[Upload Image to Glance]
-    E --> F[Create Flavor]
-    F --> G[Launch Instance]
-    G --> H[Associate Floating IP]
+  %% Begin the Beginner Project
+  subgraph Beginner_Project["Beginner Project: Single-Node OpenStack Setup"]
+    style Beginner_Project fill:#f9f,stroke:#333,stroke-width:2px;
+
+    A[Prepare CentOS] -->|Update and Configure| B[Install Packstack]
+    B -->|All-in-One Setup| C[Run Packstack --allinone]
+    C --> D[[Configure Network and Subnet]]
+    D --> E([Upload Image to Glance])
+    E --> F{Create Flavor for VM}
+    F --> G[Launch Instance on Network]
+    G --> H((Associate Floating IP))
   end
 
-  subgraph Intermediate_Project
-    A1[Prepare Multiple CentOS Nodes] --> B1[Install OpenStack on Controller Node]
-    B1 --> C1[Install OpenStack on Compute Nodes]
-    C1 --> D1[Configure Neutron Networking]
-    D1 --> E1[Run Packstack with Multi-Node Answer File]
-    E1 --> F1[Create Network, Flavor, Image]
-    F1 --> G1[Launch Instances]
-    G1 --> H1[Verify Multi-Node Setup]
+  %% Begin the Intermediate Project
+  subgraph Intermediate_Project["Intermediate Project: Multi-Node OpenStack Setup"]
+    style Intermediate_Project fill:#ffcccc,stroke:#ff0066,stroke-width:2px;
+
+    A1[Prepare Multiple CentOS Nodes] -->|Controller and Compute| B1[Install OpenStack on Controller]
+    B1 -->|Install Nova/Neutron| C1[Install OpenStack on Compute Nodes]
+    C1 -->|Networking Setup| D1[[Configure Neutron Networking]]
+    D1 -->|Distribute Services| E1{Run Packstack with Multi-Node Config}
+    E1 --> F1[Create Network, Flavor, and Image]
+    F1 --> G1([Launch Instances on Compute Nodes])
+    G1 --> H1((Verify Multi-Node Setup))
   end
 
-  subgraph Advanced_Project
-    A2[Prepare Controller and Compute Nodes] --> B2[Configure HAProxy for Load Balancing]
-    B2 --> C2[Setup Galera Cluster for DB HA]
-    C2 --> D2[Setup RabbitMQ Cluster for Queuing]
-    D2 --> E2[Configure OpenStack Services with HA]
-    E2 --> F2[Deploy Heat for Orchestration]
-    F2 --> G2[Configure Auto-Scaling with Heat]
-    G2 --> H2[Setup Centralized Logging and Monitoring]
-    H2 --> I2[Verify HA and Orchestration]
+  %% Begin the Advanced Project
+  subgraph Advanced_Project["Advanced Project: High Availability (HA) & Heat Orchestration"]
+    style Advanced_Project fill:#ccffcc,stroke:#009933,stroke-width:2px;
+
+    A2[Prepare HA Controller and Compute Nodes] -->|Load Balancer| B2{Configure HAProxy for Load Balancing}
+    B2 -->|DB Redundancy| C2[[Setup Galera Cluster for HA]]
+    C2 -->|Message Queuing| D2([Setup RabbitMQ Cluster])
+    D2 -->|Service Redundancy| E2{Configure OpenStack Services in HA}
+    E2 -->|Automation| F2[[Deploy Heat for Orchestration]]
+    F2 -->|Auto-Scaling Setup| G2{Configure Heat Auto-Scaling}
+    G2 -->|Monitor & Log| H2([Setup Centralized Logging & Monitoring])
+    H2 --> I2((Verify HA & Orchestration))
   end
 
-  linkStyle default stroke:#00f,stroke-width:2px;
+  linkStyle default stroke:#0000ff,stroke-width:2px;
 ```
 
 ##### == STEP BY STEP COMPLETION OF Deploying a Basic OpenStack Setup (All-in-One Node) == ########
